@@ -1,0 +1,1300 @@
+/* ===========================
+        Google Font
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ===========================
+        Base
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: 
+        linear-gradient(rgba(5, 6, 8, 0.8), rgba(5, 6, 8, 0.8)),
+        url('../images/background.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* ===========================
+        Header
+=========================== */
+
+/* Убираем автодобавление "полного экрана" для VK (iframe/widget) */
+.vk-fullscreen-link {
+    display: inline-block;
+}
+
+/* Если VK добавил iframe/widget в блок со ссылкой — запрещаем fullscreen */
+.vk-fullscreen-link iframe {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+
+.header {
+
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(5, 6, 8, .92);
+
+    backdrop-filter: blur(12px);
+
+    border: none;
+
+}
+
+
+.header__wrapper {
+
+    height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 60px;
+}
+
+.header__wrapper > .nav {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+/* Новый порядок: ЛОГО → МЕНЮ → ТЕЛЕФОН → VK → Telegram */
+/* Вертикальное выравнивание делаем через общий baseline: все элементы одной оси (центр по высоте шапки) */
+.header__wrapper > .phone {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+}
+
+.header__wrapper > .header__socials {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+    gap: 12px;
+
+    margin-left: 24px; /* ~24px между телефоном и VK */
+
+    margin-right: 24px;
+
+}
+
+.header__wrapper > .header__socials a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+/* ===========================
+        Logo
+=========================== */
+
+.logo {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.logo span {
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+.logo small {
+
+    color: #2f80ff;
+
+    font-size: 14px;
+
+    letter-spacing: 10px;
+
+    font-weight: 700;
+
+}
+
+/* ===========================
+        Navigation
+=========================== */
+
+.nav {
+
+    display: flex;
+
+    gap: 45px;
+
+}
+
+.nav a {
+
+    font-size: 16px;
+
+    transition: .3s;
+
+    color: #ddd;
+
+}
+
+.nav a:hover {
+
+    color: #2f80ff;
+
+}
+
+.nav a.active {
+
+    color: #2f80ff;
+
+}
+
+/* Подсветка active (цвет + плавный transition) */
+.nav a.active {
+
+    color: #2f80ff;
+
+    transition: color .3s ease;
+
+}
+
+/* ===========================
+
+        Contacts
+=========================== */
+
+.header__contacts {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 26px;
+
+    /* "левее подвинь" — небольшое смещение контактов относительно правого края шапки */
+
+    transform: translateX(-100px);
+
+}
+
+/* Полировка вертикального выравнивания между телефоном и соцкнопками */
+.phone,
+.header__socials {
+
+    height: 100%;
+
+}
+
+/* Сдвигаем телефон левее относительно остального контента шапки */
+.header__wrapper > .phone {
+
+    transform: translateX(-120px);
+
+
+
+
+}
+
+
+
+
+.header__socials {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header__social-link {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111318;
+    border: 1px solid rgba(255,255,255,.15);
+    transition: .3s;
+}
+
+.header__social-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Важно: SVG нельзя прятать/растягивать — используем только размеры из макета */
+.header__social-link img,
+.header__social-link svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+
+.header__social-link:hover {
+    background: #2f80ff;
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(47,128,255,.45);
+}
+
+
+
+
+
+.phone {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+.phone span {
+
+    font-size: 28px;
+
+    color: #2f80ff;
+
+}
+
+.phone h4 {
+
+    font-size: 18px;
+
+    margin-bottom: 4px;
+
+}
+
+.phone p {
+
+    color: #888;
+
+    font-size: 13px;
+
+}
+
+/* ===========================
+        Button
+=========================== */
+
+.btn {
+
+    background: #2f80ff;
+
+    color: #fff;
+
+    padding: 18px 38px;
+
+    border-radius: 8px;
+
+    transition: .35s;
+
+    font-weight: 600;
+
+}
+
+.btn:hover {
+
+    background: #1767e8;
+
+    transform: translateY(-2px);
+
+}
+
+.btn-dark {
+
+    background: transparent;
+
+    border: 1px solid #444;
+
+}
+
+.btn-dark:hover {
+
+    background: #2f80ff;
+
+    border-color: #2f80ff;
+
+}
+
+/* ===========================
+        Hero
+=========================== */
+
+.hero {
+
+    padding-top: 150px;
+    padding-bottom: 120px;
+
+    min-height: auto;
+
+    display: flex;
+
+    align-items: center;
+    background: linear-gradient(to bottom, #050608 0%, #050608 65%, rgba(5, 6, 8, 0) 100%);
+
+}
+
+.hero__wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 70px;
+
+}
+
+.hero__content {
+
+    max-width: 650px;
+
+}
+
+.hero__subtitle {
+
+    color: #888;
+
+    letter-spacing: 2px;
+
+    font-size: 14px;
+
+}
+
+.hero h1 {
+
+    margin-top: 10px;
+
+    font-size: 72px;
+
+    line-height: 1.05;
+
+    font-weight: 900;
+
+}
+
+.hero h1 span {
+
+    color: #2f80ff;
+
+    display: block;
+
+}
+
+.hero p {
+
+    margin-top: 20px;
+
+    color: #FFFFFF;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+}
+
+.hero__buttons {
+
+    display: flex;
+
+    gap: 20px;
+
+    margin-top: 40px;
+
+}
+
+.hero__image {
+
+    max-width: 750px;
+
+}
+
+.hero__image img {
+
+    width: 100%;
+
+}
+
+/* ===========================
+        Hero VK button
+=========================== */
+
+.hero__vk-btn {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 220px;
+    height: 60px;
+
+    border-radius: 15px;
+
+    background: #111318;
+    border: 1px solid rgba(47,128,255,.35);
+
+    padding: 0 18px;
+
+    color: #fff;
+
+    transition: .3s;
+
+    box-shadow: 0 0 0 rgba(47,128,255,.0);
+
+}
+
+.hero__vk-btn-icon {
+
+    width: 28px;
+    height: 28px;
+
+    display: block;
+
+    object-fit: contain;
+
+}
+
+.hero__vk-btn-icon {
+
+    width: 28px;
+    height: 28px;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    background: rgba(47,128,255,.12);
+
+    padding: 4px;
+
+}
+
+
+.hero__vk-btn-text {
+
+    font-size: 16px;
+    font-weight: 700;
+
+}
+
+.hero__vk-btn:hover {
+
+    transform: translateY(-3px);
+    box-shadow: 0 0 24px rgba(47,128,255,.45);
+    border-color: rgba(47,128,255,.75);
+
+}
+
+@media (max-width: 768px) {
+
+    .hero__wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .hero__vk-btn {
+        width: calc(100% - 40px);
+        max-width: 320px;
+    }
+
+}
+
+
+/* ===========================
+        Advantages
+=========================== */
+
+
+.advantages {
+
+    display: flex;
+
+    gap: 40px;
+
+    margin-top: 60px;
+
+}
+
+.advantage {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+.advantage .icon {
+
+    font-size: 32px;
+
+}
+
+.advantage h4 {
+
+    font-size: 18px;
+
+    margin-bottom: 4px;
+
+}
+
+.advantage p {
+
+    color: #888;
+
+    font-size: 14px;
+
+    margin: 0;
+
+}
+
+/* ===========================
+        Section Title
+=========================== */
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+.section-title h2 {
+
+    font-size: 42px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    position: relative;
+
+    display: inline-block;
+
+}
+
+.section-title h2::after {
+
+    content: '';
+
+    display: block;
+
+    width: 60px;
+
+    height: 4px;
+
+    background: #2f80ff;
+
+    margin: 14px auto 0;
+
+    border-radius: 2px;
+
+}
+
+/*==================================
+            SERVICES
+==================================*/
+
+.services {
+
+    padding: 80px 0 80px;
+
+}
+
+/* Анимация: легкое парение вверх-вниз (только заголовок секции) */
+@keyframes floatUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Парение заголовка "МОИ УСЛУГИ" */
+.services .section-title h2 {
+    animation: floatUpDown 3s ease-in-out infinite;
+    display: inline-block;
+}
+
+
+.services__grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 22px;
+
+}
+
+.service-card {
+
+    background: #111318;
+
+    border: none;
+
+    border-radius: 14px;
+
+
+    overflow: hidden;
+
+    transition: .35s;
+
+    cursor: pointer;
+
+    position: relative;
+
+}
+
+
+.service-card__hover-price {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #2f80ff;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity .3s ease, transform .3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(47, 128, 255, 0.3);
+}
+
+.service-card:hover .service-card__hover-price {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Убрать любую желтую подсветку/полоску при наведении на услуги */
+.service-card::before,
+.service-card::after,
+.service-card:hover::before,
+.service-card:hover::after {
+    display: none !important;
+    content: none !important;
+}
+
+.service-card:hover {
+    background: #111318 !important;
+}
+
+.services .service-card img {
+
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    transition: .5s;
+
+}
+
+.service-card__img-wrap {
+
+    height: 180px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #111318;
+
+}
+
+.service-card .service-card__img-sm {
+
+    width: auto;
+
+    height: auto;
+
+    max-width: 100%;
+
+    max-height: 150px;
+
+    object-fit: contain;
+
+    margin: 20px auto 10px;
+
+    background: #111318;
+
+}
+
+.service-card:hover img {
+    transform: scale(1.08);
+}
+
+.service-card__img-shift {
+    object-position: 15% center;
+}
+
+.service-card__content {
+
+    padding: 22px;
+
+}
+
+.service-card h3 {
+
+    font-size: 23px;
+
+    margin-bottom: 16px;
+
+    font-weight: 700;
+
+}
+
+.service-card p {
+
+    color: #FFFFFF;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+}
+
+.services-button {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 50px;
+
+}
+
+.service-card::before {
+
+    display: none;
+
+}
+
+.service-card:hover::before {
+
+    display: none;
+
+}
+
+.service-card {
+
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    animation: fadeUp .8s forwards;
+
+}
+
+.service-card:nth-child(2) {
+
+    animation-delay: .1s;
+
+}
+
+.service-card:nth-child(3) {
+
+    animation-delay: .2s;
+
+}
+
+.service-card:nth-child(4) {
+
+    animation-delay: .3s;
+
+}
+
+.service-card:nth-child(5) {
+
+    animation-delay: .4s;
+
+}
+
+.service-card:nth-child(6) {
+
+    animation-delay: .5s;
+
+}
+
+@keyframes fadeUp {
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+.service-card__image {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0d0f13;
+    overflow: hidden;
+}
+
+.service-card__image img {
+    width: 72%;
+    height: auto;
+    object-fit: contain;
+    transition: .4s;
+}
+
+.service-card:hover .service-card__image img {
+    transform: scale(1.05);
+}
+
+.works .service-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+}
+
+/* ===========================
+        Works
+=========================== */
+
+.works {
+    padding: 80px 0;
+    position: relative;
+    margin-top: 200px;
+}
+
+.works__wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.works__grid {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 10px;
+}
+
+.works__grid::-webkit-scrollbar {
+    display: none;
+}
+
+.works__grid .service-card {
+    min-width: 380px;
+    max-width: 380px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+}
+
+.works__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: .3s;
+    font-size: 54px;
+    color: #2f80ff;
+    line-height: 1;
+    padding: 0;
+}
+
+.works__arrow:hover {
+    color: #1767e8;
+    transform: translateY(-50%) scale(1.15);
+}
+
+.works__arrow--left {
+    left: 10px;
+}
+
+.works__arrow--right {
+    right: 10px;
+}/* ===========================
+        Modal (Цены)
+=========================== */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    backdrop-filter: blur(6px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: #111318;
+    border: none;
+    border-radius: 20px;
+
+    padding: 50px 40px;
+    max-width: 520px;
+    width: 90%;
+    position: relative;
+    animation: modalFadeIn .3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(.95) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal__close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 32px;
+    cursor: pointer;
+    transition: .3s;
+    line-height: 1;
+    padding: 0;
+}
+
+.modal__close:hover {
+    color: #fff;
+}
+
+.modal__title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+.modal__table {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.modal__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, .03);
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.modal__row:hover {
+    background: rgb(49, 51, 54);
+}
+
+
+
+.modal__service {
+    font-size: 16px;
+    color: #ddd;
+    font-weight: 500;
+}
+
+.modal__price {
+    font-size: 18px;
+    color: #2f80ff;
+    font-weight: 700;
+    white-space: nowrap;
+}/* ===========================
+        About (Обо мне)
+=========================== */
+
+.about {
+    padding: 400px 0 80px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* чтобы якоря попадали ниже фиксированного хедера */
+#services,
+#clients,
+#about {
+    scroll-margin-top: 120px;
+}
+
+
+
+
+.about__image {
+    display: none;
+}
+
+.about__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about__content {
+    flex: 1;
+}
+
+.about__content h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.about__content p {
+    color: #fff;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.about__stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.about__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about__stat-number {
+    font-size: 36px;
+    font-weight: 900;
+    color: #2f80ff;
+    line-height: 1;
+}
+
+.about__stat-label {
+    font-size: 14px;
+    color: #888;
+    margin-top: 8px;
+}/* ===========================
+        Works Divider
+=========================== */
+
+.works-divider {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.works-divider img {
+    width: 10%;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    opacity: .85;
+}
+
+.vk-float {
+    position: fixed;
+    right: 30px;
+    bottom: 90px; /* 🔥 подняли выше */
+    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 8px 12px;
+    background: #2f80ff;
+    border-radius: 50px;
+
+    z-index: 9999;
+    text-decoration: none;
+
+    box-shadow: 0 0 0 rgba(47,128,255,0);
+    transition: .3s;
+
+   
+    animation: vkGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes vkWiggle {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-2px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-2px); }
+}
+
+
+/* текст */
+.vk-label {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* иконка */
+.vk-float svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* hover */
+.vk-float:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 20px rgba(47,128,255,.6);
+}
+
+/* анимация */
+@keyframes vkFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 📱 мобильная версия */
+@media (max-width: 768px) {
+    .vk-float {
+        right: 20px;
+        bottom: 80px;
+        padding: 10px;
+    }
+
+    .vk-label {
+        display: none; /* скрываем текст */
+    }
+}
+.vk-circle {
+    width: 56px;
+    height: 56px;
+    background: #2f80ff;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .3s;
+
+    /* 👇 добавили анимацию */
+    animation: vkPulse 2.5s infinite ease-in-out;
+}
+
+/* пульсация */
+@keyframes vkPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(47,128,255, 0.6);
+    }
+}

@@ -6,6 +6,18 @@
 
 .container{
     padding:0 16px;
+    .bottom-buttons{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin-top:18px;
+}
+
+.mini-btn{
+    flex:1;
+    max-width:150px;
+    height:44px;
+}
 }
 
 /* ===========================

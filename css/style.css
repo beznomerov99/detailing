@@ -1269,7 +1269,7 @@ button {
 }
 
 .bottom-buttons{
-    display:flex;
+    display:none;
     gap:12px;
     justify-content:center;
     margin-top:18px;
@@ -1350,7 +1350,7 @@ button {
 
   
 .bottom-buttons{
-    display:flex;
+    display:none;
     gap:10px;
     justify-content:center;
     margin-top:18px;

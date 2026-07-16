@@ -231,4 +231,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }, { passive: true });
 });
+function openPricesModal() {
+    const modal = document.getElementById('pricesModal');
 
+    if (!modal) return;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closePricesModal() {
+    const modal = document.getElementById('pricesModal');
+
+    if (!modal) return;
+
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
